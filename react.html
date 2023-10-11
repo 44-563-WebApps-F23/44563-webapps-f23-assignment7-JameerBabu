@@ -12,13 +12,6 @@
 <body>
 
   <h2>Timeout - Red in 3 seconds</h2>
-
-  <button type="button"
-  class="btn btn-primary"
-  onclick="buttonPress2()">
-  Click me change the color.</button>
-  
-  <p id="target">I will become red </p>
   
   <script> 
   function buttonPress1() {
@@ -38,6 +31,32 @@
     reactTime = Date.now()
     console.log(reactTime)
   }
+
+  function startTime(){
+    for(i=0;i<9;i++){
+      setTimeout(function (cnt) {
+            return function () {
+                document.getElementById("counter").innerHTML = cnt;
+            };
+        }(i), (8 - i) * 1000);
+    }
+    
+
+  setTimeout(()=>{
+      if(reactTime === undefined){
+          document.getElementById('target').innerHTML = "Too Slow"
+      }else
+      {
+          var endTime = Date.now()
+          document.getElementById('target').innerHTML = "Time was " + Math.abs(parseInt(reactTime - endTime))
+
+      }
+  }, 8000)
+    
+
+
+
+  }
   </script>
 
   <div id="target">
@@ -48,8 +67,8 @@
     Count
   </div>
 
-  <button type="button"  class="btn btn-primary"  onclick="recordTime()">  Start Timer.</button>
-  <button type="button"  class="btn btn-primary"  onclick="buttonPress2()">  React.</button>
+  <button type="button"  class="btn btn-primary"  onclick="startTime()">  Start Timer.</button>
+  <button type="button"  class="btn btn-primary"  onclick="recordTime()">  React.</button>
 
 
 </body>
