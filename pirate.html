@@ -80,7 +80,7 @@
                lastCheck = position
 
                document.getElementById('penalty').innerHTML = `penalty is ${penalty}`
-
+               document.getElementById('locations').innerHTML = "Number of locations checked is " + checkCount
             }
         }
 
@@ -113,6 +113,13 @@
             document.getElementById('penalty').innerHTML = "penalty is "+ penalty
 
         }
+
+        function bounsPirate(){
+          document.getElementById('locations').innerHTML = "number of locations is 0"
+          document.getElementById('penalty').innerHTML = "penalty is 0"
+          treasureLocation = Math.floor(Math.random()*24) 
+          trapLocation = Math.floor(Math.random()*24)  
+        }
     </script>
 	
 	<p>Click on the locations to search for treasure, beware the traps</p>
@@ -120,6 +127,9 @@
     <p id="penalty">Penalty is zero.</p>
     <p onclick="help()">Click for help.</p>
     <p id="help">Help report. </p>
+
+    <button type="button"  class="btn btn-primary"  onclick="bounsPirate()">  reset and random </button>
+
     
     <div class="container">
         <div class="row">
@@ -215,6 +225,7 @@
               <img id="img25" onclick="check(24)" src="location.jpg" height="100" width="200">
             </div>
           </div>
+
 	
 </body>
 </html>	

@@ -40,6 +40,16 @@
             };
         }(i), (8 - i) * 1000);
     }
+
+    // Bonus
+    // var num = Math.floor(Math.random() * 9) + 2 
+    // for(i=0;i<num;i++){
+    //   setTimeout(function (cnt) {
+    //         return function () {
+    //             document.getElementById("counter").innerHTML = cnt;
+    //         };
+    //     }(i), (8 - i) * 1000);
+    // }
     
 
   setTimeout(()=>{
@@ -56,6 +66,16 @@
 
 
 
+  }
+
+  function bounsReact(){
+    cnt = Math.floor(Math.random() * 9) + 2 
+      setTimeout(function (cnt) {
+            return function () {
+                document.getElementById("counter").innerHTML = cnt;
+            };
+        }(i), (8 - i) * 1000);
+    
   }
   </script>
 
